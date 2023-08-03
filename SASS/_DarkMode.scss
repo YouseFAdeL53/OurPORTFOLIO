@@ -1,0 +1,52 @@
+@import "./variable";
+
+.content {
+  &.dark {
+    .name-section::before {
+      border-color: transparent transparent #1c1c1c transparent;
+    }
+    .landing {
+      .image {
+        img {
+          background: var(--gradientDark) border-box;
+          transition: var(--trans);
+        }
+      }
+    }
+    .main-title {
+      span {
+        &:first-child,
+        &:last-child {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+      h2 {
+        background-color: var(--bgDark);
+        color: var(--whiteColor);
+      }
+    }
+    .learing{
+      .image {
+        span {
+          background-color: rgba(255, 255, 255, 0.2);
+          color: #FFF;
+          &::before{
+            border-color: transparent transparent #fff3 transparent;
+          }
+        }
+      }
+    }
+    .details{
+      span {
+        color: var(--whiteColor);
+      }
+    }
+    .message{
+      .forms{
+        input, textarea{
+          color: var(--whiteColor);
+        }
+      }
+    }
+  }
+}

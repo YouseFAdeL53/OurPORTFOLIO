@@ -1,0 +1,395 @@
+// ================= Import File's
+@import "./SASS/global-rules";
+@import "./SASS/variable";
+@import "./SASS/mixinQuery";
+@import "./SASS/animation";
+@import "./SASS//DarkMode";
+
+// Start Wrapper
+.wrapper {
+  .main-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    width: 550px;
+    height: 550px;
+    @include smScreen {
+      scale: 0.6;
+      transform-origin: 0 0;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: var(--whiteColor);
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 5px solid var(--mainColor);
+    }
+    img {
+      width: 350px;
+      height: 388px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      object-position: center;
+      &.img-clip {
+        transform-origin: 0 0;
+        animation: rotate 120s infinite linear;
+      }
+      &.my-image {
+        mix-blend-mode: screen;
+        transform-origin: 0 0;
+        scale: 1.12;
+        top: 54%;
+        border-radius: 30%;
+      }
+    }
+  }
+  .srv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    height: 550px;
+    animation: rotate 120s linear infinite;
+    transform-origin: 0 0;
+    @include smScreen {
+      scale: 0.6;
+      transform-origin: 0 0;
+    }
+    .col {
+      width: 115px;
+      height: 100%;
+      position: absolute;
+      &:nth-child(1) {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 0) rotate(330deg);
+        .thebtn {
+          transform: rotate(30deg);
+        }
+      }
+      &:nth-child(2) {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 0) rotate(30deg);
+        .thebtn {
+          transform: rotate(-30deg);
+        }
+      }
+      &:nth-child(3) {
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 0) rotate(90deg);
+        .thebtn {
+          transform: rotate(-90deg);
+        }
+      }
+      .thebtn {
+        &:first-child {
+          position: absolute;
+          top: 0;
+        }
+        &:last-child {
+          position: absolute;
+          bottom: 0;
+        }
+        background-color: var(--whiteColor);
+        border-radius: 50%;
+        border: 0;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        width: 115px;
+        height: 115px;
+        box-shadow: 0 3px 18px 0 rgba(0, 0, 0, 0.15);
+        border: 2px solid var(--mainColor);
+        animation: rotatedReserve 120s linear infinite;
+        transition: var(--trans);
+        &:active {
+          transform: scale(0.95);
+        }
+        img {
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 35px;
+          filter: opacity(60%);
+        }
+        span {
+          position: absolute;
+          top: 65%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-weight: bold;
+          font-size: 15px;
+          text-transform: capitalize;
+          color: #666;
+        }
+      }
+    }
+  }
+}
+// End Wrapper
+
+// Start Section
+section {
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+  transition: var(--trans);
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+  }
+  &.section {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .content {
+    background-color: var(--bgContentDark);
+    width: 95%;
+    height: 95%;
+    padding-bottom: 60px;
+    margin: auto;
+    overflow-y: scroll;
+    top: 4%;
+    position: relative;
+    border-radius: 6px;
+    border-top: 3px solid var(--mainColor);
+    border-bottom: 3px solid var(--mainColor);
+    transition: background var(--trans);
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--mainColor);
+      border-radius: 30px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #1c1c1c;
+    }
+    // File Here
+  }
+  .name-section {
+    position: absolute;
+    writing-mode: vertical-rl;
+    background: var(--mainColor);
+    @include smScreen {
+      height: 120px;
+      font-size: 14px;
+      right: 0;
+      left: 18px;
+      width: fit-content;
+    }
+    padding: 4px;
+    height: 130px;
+    text-align: center;
+    right: 70px;
+    color: var(--whiteColor);
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    user-select: none;
+    &::before {
+      content: "";
+      border-width: 16px;
+      border-style: solid;
+      border-color: transparent transparent var(--whiteColor) transparent;
+      position: absolute;
+      transition: 1s;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+    }
+  }
+  .landing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 600px;
+    @include collectionScreen {
+      flex-direction: column;
+      margin-top: 60px;
+      gap: 20px;
+    }
+    .image {
+      flex-basis: 45%;
+      height: 450px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 400px;
+        @include collectionScreen {
+          width: 300px;
+          border-width: 10px;
+        }
+        object-fit: cover;
+        border-radius: 50%;
+        border: 15px solid transparent;
+        background: var(--gradient) border-box;
+        transition: var(--trans);
+      }
+    }
+    .text {
+      flex-basis: 48%;
+      @include smScreen {
+        text-align: center;
+      }
+      > span {
+        color: var(--textColor);
+        font-size: 20px;
+        display: block;
+        margin-bottom: 15px;
+      }
+      h2 {
+        color: var(--textColor);
+        span {
+          font-weight: bold;
+          color: var(--mainColor);
+          font-variant: small-caps;
+        }
+      }
+      .type {
+        font-weight: 600;
+        font-size: 17px;
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+  }
+  // Start About
+  .about {
+    padding-bottom: 60px;
+    .info {
+      color: var(--textColor);
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .details {
+      display: flex;
+      margin-bottom: 5px;
+      justify-content: center;
+      span {
+        color: var(--textColor);
+        flex-basis: 30%;
+        text-align: left;
+        font-weight: 500;
+        &:first-child {
+          color: var(--mainColor);
+          flex-basis: 17%;
+          text-align: left;
+          font-weight: bold;
+          margin-right: 10px;
+          @include collectionScreen {
+            text-align: center;
+            flex-basis: 30%;
+          }
+        }
+      }
+    }
+  }
+  // End About
+  // Start Learing
+  .learing {
+    padding-bottom: 60px;
+    .image {
+      transition: var(--trans);
+      position: relative;
+      @include smScreen {
+        flex-basis: 18%;
+        margin-bottom: 10px;
+      }
+      &:hover span {
+        opacity: 1;
+      }
+      span {
+        position: absolute;
+        bottom: -40px;
+        width: 100px;
+        background: #00000096;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        color: var(--whiteColor);
+        border-radius: 3px;
+        padding: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--trans);
+        &::before {
+          content: "";
+          position: absolute;
+          border-width: 10px;
+          border-style: solid;
+          border-color: transparent transparent #00000096 transparent;
+          left: 50%;
+          transform: translateX(-50%);
+          top: -20px;
+        }
+      }
+      &:hover img {
+        filter: grayscale(0);
+        transform: translateY(-5px);
+      }
+      img {
+        width: 50px;
+        cursor: pointer;
+        transition: var(--trans);
+        filter: grayscale(0.6);
+      }
+    }
+  }
+  // End Learing
+  // Start Message
+  .message {
+    .forms {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 0 auto;
+      @include smScreen {
+        width: 300px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 7px 15px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background-color: #fff3;
+        font-size: 15px;
+        caret-color: var(--mainColor);
+        outline: none;
+        color: var(--textColor);
+      }
+      textarea {
+        height: 150px;
+      }
+      .main-btn {
+        width: 200px;
+        margin: 0 auto;
+      }
+    }
+  }
+  // End Message
+}
+// End Section
