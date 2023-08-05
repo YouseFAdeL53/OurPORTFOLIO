@@ -24,3 +24,49 @@
     opacity: 1;
   }
 }
+
+
+@keyframes bounce {
+  0%, 10%, 20%, 30%, 50%, 70%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 60%{
+    transform: translateY(5px);
+  }
+}
+
+@keyframes moveFromLeft {
+  0%{
+    left: -100%;
+  }
+  100%{
+    left: 0;
+  }
+}
+
+@keyframes theScale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);;
+  }
+}
+
+@keyframes scale {
+  0%{
+    scale: 0.5;
+  }
+  100%{
+    scale: 1;
+  }
+}
+
+@keyframes up-and-down {
+  0%, 100% {
+    top: 0;
+  }
+  50%{
+    top: -50px;
+  }
+}

@@ -1,5 +1,5 @@
 @import "./variable";
-
+// Personal
 .content {
   &.dark {
     .name-section::before {
@@ -25,26 +25,145 @@
         color: var(--whiteColor);
       }
     }
-    .learing{
+    .learing {
       .image {
         span {
           background-color: rgba(255, 255, 255, 0.2);
-          color: #FFF;
-          &::before{
+          color: #fff;
+          &::before {
             border-color: transparent transparent #fff3 transparent;
           }
         }
       }
     }
-    .details{
+    .details {
       span {
         color: var(--whiteColor);
       }
     }
-    .message{
-      .forms{
-        input, textarea{
+    .message {
+      .forms {
+        input,
+        textarea {
           color: var(--whiteColor);
+        }
+      }
+    }
+  }
+}
+
+// Next Sections
+.portfolio,
+.contact,
+.teaching,
+.skills {
+  .content {
+    &.dark {
+      // maintitle
+      .main-title {
+        span {
+          &:first-child {
+            &::before {
+              border-color: transparent transparent transparent
+                rgba(255, 255, 255, 0.2);
+            }
+          }
+          &:last-child {
+            &::before {
+              border-color: transparent rgba(255, 255, 255, 0.2) transparent
+                transparent;
+            }
+          }
+        }
+      }
+      // Landing
+      .landing {
+        .image {
+          img {
+            background: none;
+            border-radius: 0;
+          }
+        }
+        .scrollDown {
+          span {
+            color: #fff3;
+          }
+        }
+      }
+      // Project
+      .project {
+        .list {
+          li {
+            color: #fff3;
+            &:hover {
+              background-color: #fff3;
+              color: #fff;
+            }
+          }
+        }
+        .items {
+          .box {
+            background-color: #1f1f1f85;
+            box-shadow: 0 0 1px #000;
+          }
+        }
+      }
+      // applying
+      .applying,
+      .course,
+      .articles,
+      .soft {
+        .box {
+          background-color: #1f1f1f85;
+          box-shadow: 0 0 1px #000;
+        }
+      }
+      // Message
+      .message {
+        .forms {
+          input,
+          textarea {
+            background-color: rgba(31, 31, 31, 0.5215686275);
+            border: 1px solid #0000001c;
+          }
+        }
+      }
+      .con-box {
+        background-color: rgba(31, 31, 31, 0.5215686275);
+        box-shadow: 0 0 1px #000;
+      }
+      // Visit
+      .visit {
+        .icons {
+          i {
+            &.fa-github-alt,
+            &.fa-x-twitter,
+            &.fa-codepen,
+            &.fa-stack-overflow {
+              background-color: rgba(31, 31, 31, 0.5215686275);
+            }
+            box-shadow: 0 0 1px #000;
+          }
+        }
+      }
+      // skills
+      .speak {
+        .arabic,
+        .english {
+          background-color: #1f1f1f85;
+          box-shadow: 0 0 1px #000;
+        }
+        .arabic::before {
+          border-color: transparent transparent transparent #1f1f1f85;
+          @include collectionScreen {
+            border-color: #1f1f1f85 transparent transparent transparent;
+          }
+        }
+        .english::before {
+          border-color: transparent #1f1f1f85 transparent transparent;
+          @include collectionScreen {
+            border-color: transparent transparent #1f1f1f85 transparent;
+          }
         }
       }
     }
