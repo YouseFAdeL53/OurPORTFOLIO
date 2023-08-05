@@ -1,0 +1,83 @@
+@keyframes rotate {
+  0%{
+    rotate: 0;
+  }
+  100%{
+    rotate: 360deg;
+  }
+}
+
+@keyframes rotatedReserve {
+  0%{
+    rotate: 360deg;
+  }
+  100%{
+    rotate: 0deg;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes bounce {
+  0%, 10%, 20%, 30%, 50%, 70%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 60%{
+    transform: translateY(5px);
+  }
+}
+
+@keyframes moveFromLeft {
+  0%{
+    left: -100%;
+  }
+  100%{
+    left: 0;
+  }
+}
+
+@keyframes theScale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);;
+  }
+}
+
+@keyframes scale {
+  0%{
+    scale: 0.5;
+  }
+  100%{
+    scale: 1;
+  }
+}
+
+@keyframes up-and-down {
+  0%, 100% {
+    top: 0;
+  }
+  50%{
+    top: -50px;
+  }
+}
+
+@keyframes showFont {
+  0%{
+    top: -10px;
+    opacity: 0;
+  }
+  100%{
+    top: 0;
+    opacity: 1;
+  }
+}
